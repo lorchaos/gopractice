@@ -1,9 +1,9 @@
-
 package gopractice
 
-import ("testing"
-		"fmt")
-
+import (
+	"fmt"
+	"testing"
+)
 
 func ExampleBinaryOperation() {
 
@@ -18,7 +18,7 @@ func TestSubtraction(t *testing.T) {
 
 	b := BinaryFunc(Sub)
 
-	if(b(10, 4) != 6) {
+	if b(10, 4) != 6 {
 		t.Error("Wrong result")
 	}
 
@@ -29,8 +29,8 @@ func TestSum(t *testing.T) {
 
 	b := BinaryFunc(Sum)
 
-	if(b(10, 4) != 14) {
-		t.Error("Wrong result") 
+	if b(10, 4) != 14 {
+		t.Error("Wrong result")
 	}
 
 	t.Log(b.Debug())

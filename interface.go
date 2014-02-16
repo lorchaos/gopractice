@@ -1,8 +1,9 @@
 package gopractice
 
-import ("fmt"
-		"reflect")
-
+import (
+	"fmt"
+	"reflect"
+)
 
 type BinaryFunc func(int, int) int
 
