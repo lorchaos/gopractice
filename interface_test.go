@@ -11,6 +11,7 @@ func ExampleBinaryOperation() {
 
 	fmt.Printf("%d", b(5, 6))
 
+	//The output is compared to the next line
 	//Output: 11
 }
 
