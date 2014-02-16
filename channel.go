@@ -1,27 +1,26 @@
 package gopractice
 
-import (
-	"log"
+import ("log"
 )
 
-var tokenChannel = make(chan int, 10)
+type sequencer func() int
 
-type Sequencer func() int
+var _ = log.Printf
 
-func NewSequencer() Sequencer {
+
+func NewSequencer() sequencer {
+
+	tokenChannel := make(chan int, 10)
 
 	go func() {
 
-		for s := 0; ; {
-			s = s + 1
+		for s := 0; ; s++ {
 			tokenChannel <- s
 		}
 	}()
 
-	return func() (t int) {
+	return func() (int) {
 
-		t = <-tokenChannel
-		log.Printf("Handing token %d", t)
-		return
+		return <-tokenChannel
 	}
 }
